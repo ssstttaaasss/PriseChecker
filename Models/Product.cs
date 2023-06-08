@@ -1,4 +1,3 @@
-
 namespace PriseChecker.Models
 {
     public class Product

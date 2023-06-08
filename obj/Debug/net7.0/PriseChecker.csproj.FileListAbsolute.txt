@@ -90,3 +90,5 @@
 /Users/stanislavpodolaka/RiderProjects/PriseChecker/bin/Debug/net7.0/Microsoft.Extensions.Configuration.dll
 /Users/stanislavpodolaka/RiderProjects/PriseChecker/bin/Debug/net7.0/Newtonsoft.Json.dll
 /Users/stanislavpodolaka/RiderProjects/PriseChecker/bin/Debug/net7.0/Telegram.Bot.dll
+/Users/stanislavpodolaka/RiderProjects/PriseChecker/obj/Debug/net7.0/PriseChecker.RazorAssemblyInfo.cache
+/Users/stanislavpodolaka/RiderProjects/PriseChecker/obj/Debug/net7.0/PriseChecker.RazorAssemblyInfo.cs
