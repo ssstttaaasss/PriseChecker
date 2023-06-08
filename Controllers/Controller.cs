@@ -6,7 +6,7 @@ using PriseChecker.Data;
 namespace PriseChecker.Controllers
 {
     [ApiController]
-    [Route("api/[controller]")]
+    [Route("api[controller]")]
     public class Controller : ControllerBase
     {
         private readonly DataContext _context;
