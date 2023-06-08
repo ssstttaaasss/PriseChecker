@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
 using PriseChecker.Models;
+using PriseChecker.Data;
 
 namespace PriseChecker.Controllers
 {
@@ -14,15 +15,15 @@ namespace PriseChecker.Controllers
     public class ProductController : ControllerBase
     {
         private readonly HttpClient _httpClient;
-        private readonly ProductDbContext _dbContext;
+        private readonly DataContext _dbContext;
 
-        public ProductController(ProductDbContext dbContext)
+        public ProductController(DataContext dbContext)
         {
             _dbContext = dbContext;
 
             _httpClient = new HttpClient();
             // Налаштування ключа API eBay
-            _httpClient.DefaultRequestHeaders.Add("Authorization", "Bearer PriceChe-SBX-0393a2ed6-dffa15a5");
+            _httpClient.DefaultRequestHeaders.Add("Authorization", "Bearer -PriceChe-SBX-0393a2ed6-dffa15a5");
         }
 
         [HttpGet("{productName}")]
