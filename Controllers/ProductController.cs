@@ -1,29 +1,36 @@
 using Microsoft.AspNetCore.Mvc;
+using PriseChecker.Services;
 
-[Route("api/products")]
-[ApiController]
-public class ProductController : ControllerBase
+namespace PriseChecker.Controllers
 {
-    private readonly ProductService _productService;
 
-    public ProductController(ProductService productService)
+
+
+    [Route("api/products")]
+    [ApiController]
+    public class ProductController : ControllerBase
     {
-        _productService = productService;
-    }
+        private readonly ProductService _productService;
 
-    [HttpGet("{productName}")]
-    public async Task<IActionResult> GetProductPrice(string productName)
-    {
-        // Отримати ціну товару за його назвою
-        var price = await _productService.GetProductPriceFromEbay(productName);
-
-        if (price == 0)
+        public ProductController(ProductService productService)
         {
-            return NotFound("Товар не знайдено або не вдалося отримати ціну");
+            _productService = productService;
         }
 
-        return Ok(price);
-    }
+        [HttpGet("{productName}")]
+        public async Task<IActionResult> GetProductPrice(string productName)
+        {
+            // Отримати ціну товару за його назвою
+            var price = await _productService.GetProductPriceFromEbay(productName);
 
-    
+            if (price == 0)
+            {
+                return NotFound("Товар не знайдено або не вдалося отримати ціну");
+            }
+
+            return Ok(price);
+        }
+
+
+    }
 }

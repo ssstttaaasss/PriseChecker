@@ -1,11 +1,16 @@
 using Microsoft.EntityFrameworkCore;
+using PriseChecker.Models;
 
-public class DataContext : DbContext
+namespace PriseChecker.Data
 {
-    public DbSet<Product> Products { get; set; }
 
-    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+    public class DataContext : DbContext
     {
-        optionsBuilder.UseSqlite("Data Source=price_checker.db");
+        public DbSet<Product> Products { get; set; }
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            optionsBuilder.UseSqlite("Data Source=price_checker.db");
+        }
     }
 }

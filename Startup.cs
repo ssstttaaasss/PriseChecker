@@ -1,41 +1,43 @@
 using Microsoft.EntityFrameworkCore;
+using PriseChecker.Data;
+using PriseChecker.Services;
 
-public class Startup
+namespace PriseChecker
 {
-    public Startup(IConfiguration configuration)
+    public class Startup
     {
-        Configuration = configuration;
-    }
-
-    public IConfiguration Configuration { get; }
-
-    public void ConfigureServices(IServiceCollection services)
-    {
-        services.AddControllers();
-
-        services.AddDbContext<DataContext>(options =>
-            options.UseSqlite("Data Source=price_checker.db"));
-        services.AddScoped<ProductService>();
-    }
-
-
-    public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
-    {
-        if (env.IsDevelopment())
+        public Startup(IConfiguration configuration)
         {
-            app.UseDeveloperExceptionPage();
-        }
-        else
-        {
-            app.UseExceptionHandler("/error");
-            app.UseHsts();
+            Configuration = configuration;
         }
 
-        app.UseRouting();
+        public IConfiguration Configuration { get; }
 
-        app.UseEndpoints(endpoints =>
+        public void ConfigureServices(IServiceCollection services)
         {
-            endpoints.MapControllers();
-        });
+            services.AddControllers();
+
+            services.AddDbContext<DataContext>(options =>
+                options.UseSqlite("Data Source=price_checker.db"));
+            services.AddScoped<ProductService>();
+        }
+
+
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        {
+            if (env.IsDevelopment())
+            {
+                app.UseDeveloperExceptionPage();
+            }
+            else
+            {
+                app.UseExceptionHandler("/error");
+                app.UseHsts();
+            }
+
+            app.UseRouting();
+
+            app.UseEndpoints(endpoints => { endpoints.MapControllers(); });
+        }
     }
 }
