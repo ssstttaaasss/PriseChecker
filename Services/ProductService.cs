@@ -1,3 +1,5 @@
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using PriseChecker.Data;
 using PriseChecker.Models;
 using System;
@@ -23,91 +25,88 @@ namespace PriseChecker.Services
             {
                 httpClient.BaseAddress = new Uri(_ebayApiBaseUrl);
 
-                // Встановити необхідні заголовки, включаючи ваш App ID (Client ID)
-                httpClient.DefaultRequestHeaders.Add("Authorization", "Bearer {-PriceChe-SBX-0393a2ed6-dffa15a5}");
+                // Set the necessary headers, including your App ID (Client ID)
+                httpClient.DefaultRequestHeaders.Add("Authorization", "Bearer PriceChe-SBX-0393a2ed6-dffa15a5");
                 httpClient.DefaultRequestHeaders.Add("Accept", "application/json");
 
-                // Виконати запит до eBay API для отримання ціни товару за його назвою
+                // Make a request to the eBay API to get the product price by its name
                 var response = await httpClient.GetAsync($"browse/v1/item_summary/search?q={productName}&limit=1");
                 response.EnsureSuccessStatusCode();
 
-                // Отримати ціну товару з відповіді і повернути її
+                // Get the product price from the response and return it
                 var content = await response.Content.ReadAsStringAsync();
                 var price = ParsePriceFromResponse(content);
 
+                return price ?? 0; // Return 0 if price is null
+            }
+        }
+
+        private decimal? ParsePriceFromResponse(string responseContent)
+        {
+            var json = JObject.Parse(responseContent);
+            var priceToken = json["items"]?.FirstOrDefault()?["price"]?["value"];
+
+            if (priceToken != null && decimal.TryParse(priceToken.ToString(), out decimal price))
+            {
                 return price;
             }
 
-            // Повернути значення за замовчуванням, якщо не вдалося отримати ціну
-            return 0;
-        }
-
-        private decimal ParsePriceFromResponse(string responseContent)
-        {
-            // Отримати ціну товару з відповіді (припустимо, що ціна знаходиться в форматі JSON)
-            // Використовуйте вашу реалізацію для розбору JSON, наприклад, Newtonsoft.Json
-            // Приклад розбору JSON:
-            // var json = JObject.Parse(responseContent);
-            // var price = json["items"][0]["price"]["value"].ToObject<decimal>();
-            // return price;
-
-            // В якості прикладу повернемо 0
-            return 0;
+            return null;
         }
 
         public async Task<Product> AddProduct(string productName)
         {
-            // Створити новий об'єкт Product
+            // Create a new Product object
             var product = new Product { Name = productName };
 
-            // Додати продукт до контексту бази даних
+            // Add the product to the database context
             _context.Products.Add(product);
 
-            // Зберегти зміни до бази даних
+            // Save the changes to the database
             await _context.SaveChangesAsync();
 
-            // Повернути створений продукт
+            // Return the created product
             return product;
         }
 
         public async Task<Product> GetProduct(int productId)
         {
-            // Знайти продукт за його ідентифікатором
+            // Find the product by its identifier
             var product = await _context.Products.FindAsync(productId);
 
-            // Повернути продукт
+            // Return the product
             return product;
         }
 
         public async Task<Product> UpdateProduct(int productId, string newName)
         {
-            // Знайти продукт за його ідентифікатором
+            // Find the product by its identifier
             var product = await _context.Products.FindAsync(productId);
 
             if (product != null)
             {
-                // Оновити назву продукту
+                // Update the product's name
                 product.Name = newName;
 
-                // Зберегти зміни до бази даних
+                // Save the changes to the database
                 await _context.SaveChangesAsync();
             }
 
-            // Повернути оновлений продукт
+            // Return the updated product
             return product;
         }
 
         public async Task<bool> DeleteProduct(int productId)
         {
-            // Знайти продукт за його ідентифікатором
+            // Find the product by its identifier
             var product = await _context.Products.FindAsync(productId);
 
             if (product != null)
             {
-                // Видалити продукт з контексту бази даних
+                // Remove the product from the database context
                 _context.Products.Remove(product);
 
-                // Зберегти зміни до бази даних
+                // Save the changes to the database
                 await _context.SaveChangesAsync();
 
                 return true;
@@ -118,10 +117,10 @@ namespace PriseChecker.Services
 
         public IQueryable<Product> GetProducts()
         {
-            // Отримати всі продукти з бази даних
+            // Get all products from the database
             var products = _context.Products;
 
-            // Повернути запит, який може бути додатково опрацьований або фільтрований
+            // Return the query that can be further processed or filtered
             return products;
         }
     }
