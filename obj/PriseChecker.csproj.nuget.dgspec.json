@@ -51,6 +51,22 @@
               "target": "Package",
               "version": "[8.0.0-preview.4.23259.3, )"
             },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "Microsoft.Extensions.Configuration": {
+              "target": "Package",
+              "version": "[8.0.0-preview.4.23259.5, )"
+            },
+            "Microsoft.Extensions.Configuration.Abstractions": {
+              "target": "Package",
+              "version": "[8.0.0-preview.4.23259.5, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.1, )"
+            },
             "SQLite": {
               "target": "Package",
               "version": "[3.13.0, )"
@@ -62,6 +78,10 @@
             "System.Data.SqlClient": {
               "target": "Package",
               "version": "[4.8.5, )"
+            },
+            "Telegram.Bot": {
+              "target": "Package",
+              "version": "[16.0.1, )"
             }
           },
           "imports": [

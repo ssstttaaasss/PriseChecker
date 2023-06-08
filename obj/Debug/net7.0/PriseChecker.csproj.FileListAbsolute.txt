@@ -85,3 +85,8 @@
 /Users/stanislavpodolaka/RiderProjects/PriseChecker/obj/Debug/net7.0/PriseChecker.pdb
 /Users/stanislavpodolaka/RiderProjects/PriseChecker/obj/Debug/net7.0/PriseChecker.genruntimeconfig.cache
 /Users/stanislavpodolaka/RiderProjects/PriseChecker/obj/Debug/net7.0/ref/PriseChecker.dll
+/Users/stanislavpodolaka/RiderProjects/PriseChecker/bin/Debug/net7.0/Humanizer.dll
+/Users/stanislavpodolaka/RiderProjects/PriseChecker/bin/Debug/net7.0/Microsoft.EntityFrameworkCore.Design.dll
+/Users/stanislavpodolaka/RiderProjects/PriseChecker/bin/Debug/net7.0/Microsoft.Extensions.Configuration.dll
+/Users/stanislavpodolaka/RiderProjects/PriseChecker/bin/Debug/net7.0/Newtonsoft.Json.dll
+/Users/stanislavpodolaka/RiderProjects/PriseChecker/bin/Debug/net7.0/Telegram.Bot.dll

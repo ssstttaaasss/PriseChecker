@@ -1,6 +1,8 @@
 using Microsoft.EntityFrameworkCore;
 using PriseChecker.Data;
 using PriseChecker.Services;
+using Microsoft.Extensions.Configuration;
+
 
 namespace PriseChecker
 {

@@ -10,9 +10,15 @@
         <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="7.0.1" />
         <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.0-preview.4.23259.3" />
         <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="8.0.0-preview.4.23259.3" />
+        <PackageReference Include="Microsoft.Extensions.Configuration" Version="8.0.0-preview.4.23259.5" />
+        <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="8.0.0-preview.4.23259.5" />
         <PackageReference Include="SQLite" Version="3.13.0" />
         <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
         <PackageReference Include="System.Data.SqlClient" Version="4.8.5" />
+        <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+        <PackageReference Include="Telegram.Bot" Version="16.0.1" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.0" />
+
     </ItemGroup>
 
 </Project>
