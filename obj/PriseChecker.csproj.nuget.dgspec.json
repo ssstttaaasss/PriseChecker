@@ -59,6 +59,10 @@
               "target": "Package",
               "version": "[8.0.0-preview.4.23259.3, )"
             },
+            "Microsoft.EntityFrameworkCore.Sqlite.Core": {
+              "target": "Package",
+              "version": "[8.0.0-preview.4.23259.3, )"
+            },
             "Microsoft.EntityFrameworkCore.Sqlite.NetTopologySuite": {
               "target": "Package",
               "version": "[8.0.0-preview.4.23259.3, )"
@@ -74,6 +78,14 @@
               "version": "[8.0.0-preview.4.23259.5, )"
             },
             "Microsoft.Extensions.Configuration.Abstractions": {
+              "target": "Package",
+              "version": "[8.0.0-preview.4.23259.5, )"
+            },
+            "Microsoft.Extensions.Configuration.FileExtensions": {
+              "target": "Package",
+              "version": "[8.0.0-preview.4.23259.5, )"
+            },
+            "Microsoft.Extensions.Configuration.Json": {
               "target": "Package",
               "version": "[8.0.0-preview.4.23259.5, )"
             },

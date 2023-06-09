@@ -13,10 +13,13 @@
           "Microsoft.AspNetCore.OpenApi": "7.0.1",
           "Microsoft.EntityFrameworkCore": "8.0.0-preview.4.23259.3",
           "Microsoft.EntityFrameworkCore.Sqlite": "8.0.0-preview.4.23259.3",
+          "Microsoft.EntityFrameworkCore.Sqlite.Core": "8.0.0-preview.4.23259.3",
           "Microsoft.EntityFrameworkCore.Sqlite.NetTopologySuite": "8.0.0-preview.4.23259.3",
           "Microsoft.EntityFrameworkCore.Tools": "8.0.0-preview.4.23259.3",
           "Microsoft.Extensions.Configuration": "8.0.0-preview.4.23259.5",
           "Microsoft.Extensions.Configuration.Abstractions": "8.0.0-preview.4.23259.5",
+          "Microsoft.Extensions.Configuration.FileExtensions": "8.0.0-preview.4.23259.5",
+          "Microsoft.Extensions.Configuration.Json": "8.0.0-preview.4.23259.5",
           "Microsoft.Extensions.Http": "5.0.0",
           "Newtonsoft.Json": "13.0.1",
           "SQLite": "3.13.0",
@@ -149,7 +152,7 @@
       "Microsoft.AspNetCore.Http.Extensions/2.2.0": {
         "dependencies": {
           "Microsoft.AspNetCore.Http.Abstractions": "2.2.0",
-          "Microsoft.Extensions.FileProviders.Abstractions": "2.2.0",
+          "Microsoft.Extensions.FileProviders.Abstractions": "8.0.0-preview.4.23259.5",
           "Microsoft.Net.Http.Headers": "2.2.0",
           "System.Buffers": "4.5.0"
         }
@@ -221,7 +224,7 @@
           "Microsoft.AspNetCore.Routing.Abstractions": "2.2.0",
           "Microsoft.Extensions.DependencyInjection": "8.0.0-preview.4.23259.5",
           "Microsoft.Extensions.DependencyModel": "8.0.0-preview.4.23259.5",
-          "Microsoft.Extensions.FileProviders.Abstractions": "2.2.0",
+          "Microsoft.Extensions.FileProviders.Abstractions": "8.0.0-preview.4.23259.5",
           "Microsoft.Extensions.Logging.Abstractions": "8.0.0-preview.4.23259.5",
           "System.Diagnostics.DiagnosticSource": "4.5.0",
           "System.Threading.Tasks.Extensions": "4.5.4"
@@ -288,7 +291,7 @@
           "Microsoft.AspNetCore.Razor.Runtime": "2.2.0",
           "Microsoft.AspNetCore.Routing.Abstractions": "2.2.0",
           "Microsoft.Extensions.Caching.Memory": "8.0.0-preview.4.23259.5",
-          "Microsoft.Extensions.FileSystemGlobbing": "2.2.0",
+          "Microsoft.Extensions.FileSystemGlobbing": "8.0.0-preview.4.23259.5",
           "Microsoft.Extensions.Primitives": "8.0.0-preview.4.23259.5"
         }
       },
@@ -584,6 +587,36 @@
           }
         }
       },
+      "Microsoft.Extensions.Configuration.FileExtensions/8.0.0-preview.4.23259.5": {
+        "dependencies": {
+          "Microsoft.Extensions.Configuration": "8.0.0-preview.4.23259.5",
+          "Microsoft.Extensions.Configuration.Abstractions": "8.0.0-preview.4.23259.5",
+          "Microsoft.Extensions.FileProviders.Abstractions": "8.0.0-preview.4.23259.5",
+          "Microsoft.Extensions.FileProviders.Physical": "8.0.0-preview.4.23259.5",
+          "Microsoft.Extensions.Primitives": "8.0.0-preview.4.23259.5"
+        },
+        "runtime": {
+          "lib/net7.0/Microsoft.Extensions.Configuration.FileExtensions.dll": {
+            "assemblyVersion": "8.0.0.0",
+            "fileVersion": "8.0.23.25905"
+          }
+        }
+      },
+      "Microsoft.Extensions.Configuration.Json/8.0.0-preview.4.23259.5": {
+        "dependencies": {
+          "Microsoft.Extensions.Configuration": "8.0.0-preview.4.23259.5",
+          "Microsoft.Extensions.Configuration.Abstractions": "8.0.0-preview.4.23259.5",
+          "Microsoft.Extensions.Configuration.FileExtensions": "8.0.0-preview.4.23259.5",
+          "Microsoft.Extensions.FileProviders.Abstractions": "8.0.0-preview.4.23259.5",
+          "System.Text.Json": "8.0.0-preview.4.23259.5"
+        },
+        "runtime": {
+          "lib/net7.0/Microsoft.Extensions.Configuration.Json.dll": {
+            "assemblyVersion": "8.0.0.0",
+            "fileVersion": "8.0.23.25905"
+          }
+        }
+      },
       "Microsoft.Extensions.DependencyInjection/8.0.0-preview.4.23259.5": {
         "dependencies": {
           "Microsoft.Extensions.DependencyInjection.Abstractions": "8.0.0-preview.4.23259.5"
@@ -615,22 +648,48 @@
           }
         }
       },
-      "Microsoft.Extensions.FileProviders.Abstractions/2.2.0": {
+      "Microsoft.Extensions.FileProviders.Abstractions/8.0.0-preview.4.23259.5": {
         "dependencies": {
           "Microsoft.Extensions.Primitives": "8.0.0-preview.4.23259.5"
+        },
+        "runtime": {
+          "lib/net6.0/Microsoft.Extensions.FileProviders.Abstractions.dll": {
+            "assemblyVersion": "8.0.0.0",
+            "fileVersion": "8.0.23.25905"
+          }
         }
       },
       "Microsoft.Extensions.FileProviders.Composite/2.2.0": {
         "dependencies": {
-          "Microsoft.Extensions.FileProviders.Abstractions": "2.2.0"
+          "Microsoft.Extensions.FileProviders.Abstractions": "8.0.0-preview.4.23259.5"
         }
       },
-      "Microsoft.Extensions.FileSystemGlobbing/2.2.0": {},
+      "Microsoft.Extensions.FileProviders.Physical/8.0.0-preview.4.23259.5": {
+        "dependencies": {
+          "Microsoft.Extensions.FileProviders.Abstractions": "8.0.0-preview.4.23259.5",
+          "Microsoft.Extensions.FileSystemGlobbing": "8.0.0-preview.4.23259.5",
+          "Microsoft.Extensions.Primitives": "8.0.0-preview.4.23259.5"
+        },
+        "runtime": {
+          "lib/net7.0/Microsoft.Extensions.FileProviders.Physical.dll": {
+            "assemblyVersion": "8.0.0.0",
+            "fileVersion": "8.0.23.25905"
+          }
+        }
+      },
+      "Microsoft.Extensions.FileSystemGlobbing/8.0.0-preview.4.23259.5": {
+        "runtime": {
+          "lib/net7.0/Microsoft.Extensions.FileSystemGlobbing.dll": {
+            "assemblyVersion": "8.0.0.0",
+            "fileVersion": "8.0.23.25905"
+          }
+        }
+      },
       "Microsoft.Extensions.Hosting.Abstractions/2.2.0": {
         "dependencies": {
           "Microsoft.Extensions.Configuration.Abstractions": "8.0.0-preview.4.23259.5",
           "Microsoft.Extensions.DependencyInjection.Abstractions": "8.0.0-preview.4.23259.5",
-          "Microsoft.Extensions.FileProviders.Abstractions": "2.2.0",
+          "Microsoft.Extensions.FileProviders.Abstractions": "8.0.0-preview.4.23259.5",
           "Microsoft.Extensions.Logging.Abstractions": "8.0.0-preview.4.23259.5"
         }
       },
@@ -2523,6 +2582,20 @@
       "path": "microsoft.extensions.configuration.abstractions/8.0.0-preview.4.23259.5",
       "hashPath": "microsoft.extensions.configuration.abstractions.8.0.0-preview.4.23259.5.nupkg.sha512"
     },
+    "Microsoft.Extensions.Configuration.FileExtensions/8.0.0-preview.4.23259.5": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-LwvYLAmPKR+B0CLZv1V2UIBKqcLUbzxPeZ7X7kCws7NitUjo3j0GLm7tzLU6vNmoNVTEk2uCiMCJ9f3PYvHYvw==",
+      "path": "microsoft.extensions.configuration.fileextensions/8.0.0-preview.4.23259.5",
+      "hashPath": "microsoft.extensions.configuration.fileextensions.8.0.0-preview.4.23259.5.nupkg.sha512"
+    },
+    "Microsoft.Extensions.Configuration.Json/8.0.0-preview.4.23259.5": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Pj9heeNSdreP/mbVqc+bT6cbgx4ef9r7UvG8JFHlXwaneTjlK0Ax/Npc9MLpYp9a7t9/FUo1uNySB/tqM6qQvw==",
+      "path": "microsoft.extensions.configuration.json/8.0.0-preview.4.23259.5",
+      "hashPath": "microsoft.extensions.configuration.json.8.0.0-preview.4.23259.5.nupkg.sha512"
+    },
     "Microsoft.Extensions.DependencyInjection/8.0.0-preview.4.23259.5": {
       "type": "package",
       "serviceable": true,
@@ -2544,12 +2617,12 @@
       "path": "microsoft.extensions.dependencymodel/8.0.0-preview.4.23259.5",
       "hashPath": "microsoft.extensions.dependencymodel.8.0.0-preview.4.23259.5.nupkg.sha512"
     },
-    "Microsoft.Extensions.FileProviders.Abstractions/2.2.0": {
+    "Microsoft.Extensions.FileProviders.Abstractions/8.0.0-preview.4.23259.5": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-EcnaSsPTqx2MGnHrmWOD0ugbuuqVT8iICqSqPzi45V5/MA1LjUNb0kwgcxBGqizV1R+WeBK7/Gw25Jzkyk9bIw==",
-      "path": "microsoft.extensions.fileproviders.abstractions/2.2.0",
-      "hashPath": "microsoft.extensions.fileproviders.abstractions.2.2.0.nupkg.sha512"
+      "sha512": "sha512-GkDpTkvfayQPdZ5iWHt2ohZJLb/9rJ89OKIld2rgWngAwA16qSn2NJxsp0+OfywanZGzzGF6lF7R6USGJCgwPg==",
+      "path": "microsoft.extensions.fileproviders.abstractions/8.0.0-preview.4.23259.5",
+      "hashPath": "microsoft.extensions.fileproviders.abstractions.8.0.0-preview.4.23259.5.nupkg.sha512"
     },
     "Microsoft.Extensions.FileProviders.Composite/2.2.0": {
       "type": "package",
@@ -2558,12 +2631,19 @@
       "path": "microsoft.extensions.fileproviders.composite/2.2.0",
       "hashPath": "microsoft.extensions.fileproviders.composite.2.2.0.nupkg.sha512"
     },
-    "Microsoft.Extensions.FileSystemGlobbing/2.2.0": {
+    "Microsoft.Extensions.FileProviders.Physical/8.0.0-preview.4.23259.5": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-ZSsHZp3PyW6vk37tDEdypjgGlNtpJ0EixBMOfUod2Thx7GtwfFSAQXUQx8a8BN8vfWKGGMbp7jPWdoHx/At4wQ==",
-      "path": "microsoft.extensions.filesystemglobbing/2.2.0",
-      "hashPath": "microsoft.extensions.filesystemglobbing.2.2.0.nupkg.sha512"
+      "sha512": "sha512-TIuL76MrdgC4jcgFzxr3deJdIxJK/t+vh8sPv44hOwsFrTzemEBUb7x/cxfdLfQ4IezDXKrOo42P9gQysA8+GQ==",
+      "path": "microsoft.extensions.fileproviders.physical/8.0.0-preview.4.23259.5",
+      "hashPath": "microsoft.extensions.fileproviders.physical.8.0.0-preview.4.23259.5.nupkg.sha512"
+    },
+    "Microsoft.Extensions.FileSystemGlobbing/8.0.0-preview.4.23259.5": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-QC2sY65BqqrfWBcjOVl5djqIej9aDc85dFL6QTOfLLnfJn47AcwA6EKfxrLGMP3Y16rEDhi2R7tb5NB5w5T72Q==",
+      "path": "microsoft.extensions.filesystemglobbing/8.0.0-preview.4.23259.5",
+      "hashPath": "microsoft.extensions.filesystemglobbing.8.0.0-preview.4.23259.5.nupkg.sha512"
     },
     "Microsoft.Extensions.Hosting.Abstractions/2.2.0": {
       "type": "package",

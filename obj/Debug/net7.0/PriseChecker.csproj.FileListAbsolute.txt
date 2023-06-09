@@ -124,3 +124,8 @@
 /Users/stanislavpodolaka/RiderProjects/PriseChecker/bin/Debug/net7.0/runtimes/win-x86/native/mod_spatialite.dll
 /Users/stanislavpodolaka/RiderProjects/PriseChecker/bin/Debug/net7.0/runtimes/win-x86/native/zlib1.dll
 /Users/stanislavpodolaka/RiderProjects/PriseChecker/obj/Debug/net7.0/EFCoreSqliteNetTopologySuite.cs
+/Users/stanislavpodolaka/RiderProjects/PriseChecker/bin/Debug/net7.0/Microsoft.Extensions.Configuration.FileExtensions.dll
+/Users/stanislavpodolaka/RiderProjects/PriseChecker/bin/Debug/net7.0/Microsoft.Extensions.Configuration.Json.dll
+/Users/stanislavpodolaka/RiderProjects/PriseChecker/bin/Debug/net7.0/Microsoft.Extensions.FileProviders.Abstractions.dll
+/Users/stanislavpodolaka/RiderProjects/PriseChecker/bin/Debug/net7.0/Microsoft.Extensions.FileProviders.Physical.dll
+/Users/stanislavpodolaka/RiderProjects/PriseChecker/bin/Debug/net7.0/Microsoft.Extensions.FileSystemGlobbing.dll
