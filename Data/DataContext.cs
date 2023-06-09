@@ -10,7 +10,7 @@ namespace PriseChecker.Data
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlite("Data Source=price_checker.db");
+            optionsBuilder.UseSqlite("Data Source=pricechecker.db");
         }
     }
 }
