@@ -20,8 +20,7 @@ namespace PriseChecker
             services.AddControllers();
 
             services.AddDbContext<DataContext>(options =>
-                options.UseSqlite(Configuration.GetConnectionString("DefaultConnection")));
-
+                options.UseSqlite("Data Source=price_checker.db"));
             services.AddScoped<ProductService>();
         }
 

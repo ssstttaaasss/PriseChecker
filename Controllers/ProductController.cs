@@ -1,13 +1,12 @@
-using Microsoft.AspNetCore.Mvc;
-using PriseChecker.Models;
-using System.Collections.Generic;
-using PriseChecker.Data;
 using System;
 using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
+using PriseChecker.Models;
+using PriseChecker.Data;
 
 namespace PriseChecker.Controllers
 {
@@ -25,63 +24,6 @@ namespace PriseChecker.Controllers
             _httpClient = new HttpClient();
             // Налаштування ключа API eBay
             _httpClient.DefaultRequestHeaders.Add("Authorization", "Bearer -PriceChe-SBX-0393a2ed6-dffa15a5");
-        }
-
-        [HttpGet]
-        public ActionResult<IEnumerable<Product>> GetProducts()
-        {
-            var products = _dbContext.Products;
-            return Ok(products);
-        }
-
-        [HttpGet("{id}")]
-        public ActionResult<Product> GetProduct(int id)
-        {
-            var product = _dbContext.Products.Find(id);
-            if (product == null)
-            {
-                return NotFound();
-            }
-            return Ok(product);
-        }
-
-        [HttpPost]
-        public ActionResult<Product> AddProduct(Product product)
-        {
-            _dbContext.Products.Add(product);
-            _dbContext.SaveChanges();
-            return CreatedAtAction(nameof(GetProduct), new { id = product.Id }, product);
-        }
-
-        [HttpPut("{id}")]
-        public IActionResult UpdateProduct(int id, Product updatedProduct)
-        {
-            var product = _dbContext.Products.Find(id);
-            if (product == null)
-            {
-                return NotFound();
-            }
-
-            product.Name = updatedProduct.Name;
-            product.Price = updatedProduct.Price;
-            _dbContext.SaveChanges();
-
-            return NoContent();
-        }
-
-        [HttpDelete("{id}")]
-        public IActionResult DeleteProduct(int id)
-        {
-            var product = _dbContext.Products.Find(id);
-            if (product == null)
-            {
-                return NotFound();
-            }
-
-            _dbContext.Products.Remove(product);
-            _dbContext.SaveChanges();
-
-            return NoContent();
         }
 
         [HttpGet("{productName}")]

@@ -26,7 +26,7 @@ namespace PriseChecker.Services
                 httpClient.BaseAddress = new Uri(_ebayApiBaseUrl);
 
                 // Set the necessary headers, including your App ID (Client ID)
-                httpClient.DefaultRequestHeaders.Add("Authorization", "Bearer -PriceChe-SBX-0393a2ed6-dffa15a5");
+                httpClient.DefaultRequestHeaders.Add("Authorization", "Bearer PriceChe-SBX-0393a2ed6-dffa15a5");
                 httpClient.DefaultRequestHeaders.Add("Accept", "application/json");
 
                 // Make a request to the eBay API to get the product price by its name
