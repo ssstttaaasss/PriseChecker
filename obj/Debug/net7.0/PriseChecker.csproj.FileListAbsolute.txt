@@ -92,3 +92,7 @@
 /Users/stanislavpodolaka/RiderProjects/PriseChecker/bin/Debug/net7.0/Microsoft.CodeAnalysis.Razor.dll
 /Users/stanislavpodolaka/RiderProjects/PriseChecker/bin/Debug/net7.0/Newtonsoft.Json.Bson.dll
 /Users/stanislavpodolaka/RiderProjects/PriseChecker/bin/Debug/net7.0/System.Security.Permissions.dll
+/Users/stanislavpodolaka/RiderProjects/PriseChecker/bin/Debug/net7.0/AspNet.Security.OAuth.Ebay.dll
+/Users/stanislavpodolaka/RiderProjects/PriseChecker/bin/Debug/net7.0/eBay.Service.dll
+/Users/stanislavpodolaka/RiderProjects/PriseChecker/bin/Debug/net7.0/Mono.TextTemplating.dll
+/Users/stanislavpodolaka/RiderProjects/PriseChecker/bin/Debug/net7.0/System.CodeDom.dll
